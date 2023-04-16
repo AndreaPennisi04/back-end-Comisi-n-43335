@@ -8,8 +8,8 @@ const data = {
 
 console.log(data);
 
-edad++;
-nombreDeSeries.push("Friends");
-
+data.edad++;
 console.log(data.edad);
+
+data.nombreDeSeries.push("The big bang theory");
 console.log(data.nombreDeSeries);
