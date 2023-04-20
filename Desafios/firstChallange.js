@@ -18,6 +18,7 @@ class ProductManager {
     this.products.push(product);
   }
   getProducts() {
+    console.log(this.products);
     return this.products;
   }
   getProductById(code) {
@@ -25,6 +26,7 @@ class ProductManager {
     if (!result) {
       console.log("Code not found");
     }
+    console.log(result);
     return result;
   }
 }
@@ -38,5 +40,3 @@ barracas.addProduct("Kia Rio", "Electric car", "from: " + 9000, "Image not avail
 varela.addProduct("Kia Sorento", "Petrol", "from: " + 10000, "Image not available yet", 1, 20);
 varela.addProduct("Kia Sorento", "Diesel", "from: " + 15000, "Image not available yet", 2, 10);
 varela.addProduct("Kia Sorento", "Diesel", "from: " + 15000, "Image not available yet", 2, 10);
-
-barracas.getProductById();
