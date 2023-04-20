@@ -1,36 +1,35 @@
-function mostrarLista1(arreglo) {
-  if (arreglo.length === 0) {
-    alert("Lista vacia");
-    return;
-  }
-  for (i = 0; i < arreglo.lenght; i++) {
-    console.log(arreglo[i]);
-  }
-  console.log(`Longitud de la lista es ${arreglo.length}`);
-}
+// Ejercicio en clases
+const objetos = [
+  {
+    manzanas: 3,
+    peras: 2,
+    carne: 1,
+    jugos: 5,
+    dulces: 2,
+  },
+  {
+    manzanas: 1,
+    sandias: 1,
+    huevos: 6,
+    jugos: 1,
+    panes: 4,
+  },
+];
+console.log(objetos);
 
-mostrarLista1([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);
+let newArray = [];
+let total = 0;
 
-//Ejercicio en clases
-// const objetos = [
-//   {
-//     manzanas: 3,
-//     peras: 2,
-//     carne: 1,
-//     jugos: 5,
-//     dulces: 2,
-//   },
-//   {
-//     manzanas: 1,
-//     sandias: 1,
-//     huevos: 6,
-//     jugos: 1,
-//     panes: 4,
-//   },
-// ];
+objetos.forEach((objeto) => {
+  const keys = Object.keys(objeto);
+  const values = Object.values(objeto);
 
-// let mostrar = objetos.keys(...objetos);
-// console.log(mostrar);
+  total += values.reduce((valorInicial, valorAcumulado) => valorAcumulado + valorInicial);
 
-// let total = objetos.includes(...objetos);
-// console.log(total);
+  keys.forEach((key) => {
+    if (!newArray.includes(key)) newArray.push(key);
+  });
+});
+
+console.log(newArray);
+console.log(total);
