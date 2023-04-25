@@ -96,11 +96,11 @@ const arregloAnidado = ["1", 2, 3, 4, [5, 6, 6], [8, 9, 10, 11, [13, 14, 156]]];
 console.log(arregloAnidado.flat(10));
 
 //Nullish: no quiero recibir datos indefinidos o nulos
-const prueba = undefined;
+const prueba = null; // o si lo reemplazo por undefined
 
-const variableAsignada = prueba && "Sin valor";
-
-const nullish = prueba ?? "Sin valor";
+const variableAsignada = prueba || "Sin valor"; // si uso && me da los dos dato. El && lo que hace es comparar los dos valores por eso:(null de la linea99 y el segundo valor de linea 101 "Sin valor")
+// el || de la linea 101 solo va a devolver el valor de la derecha "sin valor"
+const nullish = prueba ?? "Sin valor"; // El operador ?? significa nullish
 
 console.log(variableAsignada);
 console.log(nullish);
