@@ -14,8 +14,10 @@ const env = async () => {
     apellido: "Diquattro",
     marca: "Lamborghini",
   };
-  let result = await manager.crearUsuarios(user, user2);
-  console.log(result);
+  await manager.crearUsuarios(user);
+  await manager.crearUsuarios(user2);
+  let res = await manager.mostrarUsuarios();
+  console.log(res);
 };
 
 env();

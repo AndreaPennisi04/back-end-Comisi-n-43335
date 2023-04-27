@@ -1,0 +1,26 @@
+[
+  {
+    "nombre": "Francisco",
+    "apellido": "Diquattro",
+    "marca": "Rolls-Royce",
+    "id": 1
+  },
+  {
+    "nombre": "Mateo",
+    "apellido": "Diquattro",
+    "marca": "Bentley",
+    "id": 2
+  },
+  {
+    "nombre": "Andrea",
+    "apellido": "Pennisi",
+    "marca": "Kia",
+    "id": 3
+  },
+  {
+    "nombre": "Diego",
+    "apellido": "Diquattro",
+    "marca": "Lamborghini",
+    "id": 4
+  }
+]
