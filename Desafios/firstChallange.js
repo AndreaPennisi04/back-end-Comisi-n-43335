@@ -13,7 +13,15 @@ class ProductManager {
       return;
     }
 
-    const product = { id: this.products.length, title, description, price, thumbnail, code, stock };
+    const product = {
+      id: this.products.length + 1,
+      title: title,
+      description: description,
+      price: price,
+      thumbnail: thumbnail,
+      code: code,
+      stock: stock,
+    };
 
     this.products.push(product);
   }
