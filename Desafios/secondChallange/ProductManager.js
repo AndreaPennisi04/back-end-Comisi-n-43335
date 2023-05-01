@@ -11,11 +11,29 @@ export default class ProductManager {
   };
 
   async addProduct(product) {
-    const products = await this.getProducts();
+    const currentProducts = await this.getProducts();
+
+    if (
+      !product.title ||
+      !product.description ||
+      !product.price ||
+      !product.thumbnail ||
+      !product.code ||
+      !product.stock
+    ) {
+      console.error("Data missing. All data is required");
+      return;
+    }
+
+    if (currentProducts.some((p) => p.code === product.code)) {
+      console.log(`A product with the code: ${code} already exists`);
+      return;
+    }
+
     let productId = 1;
 
-    if (products.length != 0) {
-      productId = products[products.length - 1].id + 1;
+    if (currentProducts.length != 0) {
+      productId = currentProducts[currentProducts.length - 1].id + 1;
     }
     const newCar = { ...product, id: productId };
 

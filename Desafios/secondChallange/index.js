@@ -6,7 +6,7 @@ let data = {
   title: "Kia EV6",
   description: "Electric car",
   price: 45000,
-  thumnail: "Images not available",
+  thumbnail: "Images not available",
   code: "001",
   stock: "6",
 };
