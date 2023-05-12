@@ -1,0 +1,17 @@
+{
+  "name": "clase7",
+  "version": "1.0.0",
+  "description": "express avanzado",
+  "type": "module",
+  "main": "clase7ExpressAvanzado.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon clase7ExpressAvanzado.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2",
+    "nodemon": "^2.0.22"
+  }
+}
