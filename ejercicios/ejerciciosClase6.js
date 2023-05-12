@@ -1,5 +1,5 @@
-import express from "express";
-const app = express();
+import express from "express"; //el import de express siempre de
+const app = express(); // esto va siempre para poder inicializar express
 
 // Endpoint GET para la ruta /bienvenida
 app.get("/bienvenida", (req, res) => {
@@ -23,9 +23,9 @@ app.listen(8080, () => {
 });
 
 //Ejercicio hecho por el profesor
-const express = require("express");
+// const express = require("express");
 
-const app1 = express();
+// const app1 = express();
 
 app.use(express.json());
 

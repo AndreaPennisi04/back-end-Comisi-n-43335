@@ -1,0 +1,9 @@
+Get - Para traer todos los productos y mandamos un limit por query
+Get - Para traer un solo producto especifico por id y rebimos el id por param
+
+
+
+-------------------------------------
+Post - Para agregar un producto y recibimos la info del producto en el body
+Put - Para modificar un producto y recibimos la info del producto en el body
+Delete - Para borrar un producto especifico y recibimos el id por param
