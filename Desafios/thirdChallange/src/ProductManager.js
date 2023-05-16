@@ -22,12 +22,12 @@ export default class ProductManager {
       !product.stock
     ) {
       console.error("Data missing. All data is required");
-      return;
+      return false;
     }
 
     if (currentProducts.some((p) => p.code === product.code)) {
       console.log(`A product with the code: ${code} already exists`);
-      return;
+      return false;
     }
 
     let productId = 1;
@@ -43,6 +43,7 @@ export default class ProductManager {
       await this._writeProductsToFile(currentProducts);
     } catch (error) {
       console.error(`Error reading file: ${this.path} - ${error.message}`);
+      return false;
     }
 
     return newCar;
@@ -67,16 +68,17 @@ export default class ProductManager {
     return products.find((product) => product.id === parseInt(id));
   };
 
-  async updateProduct(updateProduct) {
+  async updateProduct(idToUpdate, updateProduct) {
     const updateArray = await this.getProducts();
-    const indexOfProductToUpdate = updateArray.findIndex((p) => p.id === updateProduct.id);
+    const id = Number(idToUpdate);
+    const indexOfProductToUpdate = updateArray.findIndex((p) => p.id === id);
 
     if (indexOfProductToUpdate < 0) {
-      console.error(`Can't find the product you are trying to update: id: ${updateProduct.id}`);
+      console.error(`Can't find the product you are trying to update: id: ${id}`);
       return;
     }
 
-    updateArray[indexOfProductToUpdate] = updateProduct;
+    updateArray[indexOfProductToUpdate] = { id, ...updateProduct };
 
     try {
       await this._writeProductsToFile(updateArray);
@@ -87,13 +89,14 @@ export default class ProductManager {
     return updateProduct;
   }
 
-  removeProduct = async (id) => {
+  removeProduct = async (idToDelete) => {
+    const id = Number(idToDelete);
     const arrayToUpdate = await this.getProducts();
     const indexOfProductToDelete = arrayToUpdate.findIndex((p) => p.id === id);
 
     if (indexOfProductToDelete < 0) {
       console.error(`Can't find the product you are trying to delete: id: ${id}`);
-      return;
+      return false;
     }
 
     arrayToUpdate.splice(indexOfProductToDelete, 1);
@@ -102,8 +105,9 @@ export default class ProductManager {
       await this._writeProductsToFile(arrayToUpdate);
     } catch (error) {
       console.error(`Error writing file: ${this.path} - ${error.message}`);
+      return false;
     }
 
-    return arrayToUpdate;
+    return true;
   };
 }
