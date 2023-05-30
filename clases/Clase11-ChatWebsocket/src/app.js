@@ -15,3 +15,13 @@ app.set("views", __dirname + "/views");
 app.set("view engine", "handlebars");
 app.use(express.static(__dirname + "/public")); //public es importante para tener archivos js y css en plantillas
 app.use("/", viewsRouter);
+
+let messages = [];
+io.on("connection", (socket) => {
+  console.log("Nuevo cliente conectado");
+
+  socket.on("message", (data) => {
+    messages.push(data);
+    io.emit("messageLogs", messages);
+  });
+});
