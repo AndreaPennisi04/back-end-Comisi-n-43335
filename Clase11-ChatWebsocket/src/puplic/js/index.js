@@ -9,6 +9,7 @@ Swal.fire({
     return !value && "Necesitas un nombre de usuario para continuar!";
   },
   allowOutsideClick: false,
+  allowEscapekey: false,
 }).then((result) => {
   user = result.value;
 });

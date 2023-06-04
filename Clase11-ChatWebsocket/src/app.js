@@ -5,9 +5,10 @@ import viewsRouter from "./routes/views.router.js";
 import { Server } from "socket.io"; // este servidor es propio de websocket
 
 const app = express();
-const httpServer = app.listen(8080, () => console.log("Listening on PORT 8080"));
+//const handlebars = require("express-handlebars");
+const server = app.listen(8080, () => console.log("Listening on PORT 8080"));
 
-const io = new Server(httpServer); // io sera un servidor para trabajar con sockets.
+const io = new Server(server); // io sera un servidor para trabajar con sockets.
 
 //configuracion de plantillas
 app.engine("handlebars", handlebars.engine());
