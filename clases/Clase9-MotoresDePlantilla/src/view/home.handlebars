@@ -1,0 +1,14 @@
+<div>
+  <h1>Bienvenido/a {{user.name}}!</h1>
+  {{#if isAdmin}}
+    {{#each food}}
+      <div>
+        <p>{{this.name}}</p>
+        <p>{{this.price}}</p>
+      </div>
+    {{/each}}
+  {{else}}
+    <p>Permition denied</p>
+  {{/if}}
+</div>
+<script src="/clases/Clase9-MotoresDePlantilla/src/app.js"></script>

@@ -1,0 +1,12 @@
+<div>
+  {{#if food}}
+    <h1>Aqui tenemos la lista</h1>
+    <ul>
+      {{#each food}}
+      <li><p{{this.name}}:{{this.price}}></p></li>
+      {{/each}}
+    </ul>
+  {{else}}
+    <h2>Aun no tenemos el menu preparado</h2>
+  {{/if}}
+</div>

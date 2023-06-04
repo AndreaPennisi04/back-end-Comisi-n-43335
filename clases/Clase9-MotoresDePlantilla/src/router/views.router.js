@@ -1,30 +1,31 @@
-import express from "express";
+import { Router } from "express";
 
-const router = express.Router();
-let food = [
-  { name: "arroz", price: "£2" },
-  { name: "stake", price: "£7" },
-  { name: "potato", price: "£2" },
-  { name: "sausage", price: "£4" },
-];
+const router = Router();
 
-app.get("/", (req, res) => {
-  let testUser = {
+router.get("/", (req, res) => {
+  const user = {
     name: "andrea",
     surname: "Pennisi",
     age: 41,
-    email: "andrea@gmail.com",
-    phone: "1234567890",
     role: "user",
   };
-  res.render("index", {
-    user: testUser,
-    style: "index.css",
-    isAdmin: testUser.role === "admin",
+  res.render("home", {
+    name: user.name,
+    surname: user.surname,
+    role: user.role,
+  });
+});
+
+router.get("/food", (req, res) => {
+  const food = [
+    { name: "arroz", price: "£2" },
+    { name: "stake", price: "£7" },
+    { name: "potato", price: "£2" },
+    { name: "sausage", price: "£4" },
+  ];
+  res.render("food", {
     food,
   });
 });
 
-app.use("/", viewsRouter);
-
-export default Router;
+export default router;
