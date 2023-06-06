@@ -1,6 +1,6 @@
-const socket = io(); // establecer la conexion del lado del cliente
+const socket = io(); // establecer la conexion del lado del cliente donde puedo hacer peticiones.
 
-socket.emit("message", "Hola desde el lado del Front");
+socket.emit("message", "Hola a todos, esto es un mensaje desde en Front");
 
 socket.on("evento_socket_individual", (data) => {
   console.log(data);
