@@ -1,0 +1,88 @@
+Tenemos base de datos y File system. Una base de datos es: Recopilación organizada de datos sobre la cual se pueden aplicar operaciones de lectura, creación, modificación o eliminación de éstos.
+Y file System es: Un sistema de archivos o sistema de ficheros, (file system: fs), que controla cómo se almacenan y recuperan los datos. Sin un sistema de archivos, los datos colocados en un medio de almacenamiento serían un gran cuerpo de datos sin manera de saber dónde termina un dato y comienza el siguiente. Es el encargado de administrar y facilitar el uso de las memorias periféricas o internas, ya sean secundarias o terciarias.1
+
+Hasta este punto del curso, hemos estado trabajando con un fileSystem (sistema de archivos) para hacer nuestros almacenamientos principales.
+
+Base de datos: Tenemos dos tipos: relacionales y no relacionales.
+Una base de dato NO RELACIONAL podria ser MongoDB. Tengamos en cuenta que que las bases de datos relacionales y no relacionales optimizan procesos pero de acuerdo al contexto en el que se esten usando, siempre depende del contexto.
+
+Q es util una base de Datos? pq es un almacenamiento seguro.Los datos se pueden separar por "Contexto", permitiendo así tener separados los datos de interés.
+Separar clientes potenciales de clientes sólo interesados.
+Separar productos existentes de productos fuera de stock
+Separar diferentes usuarios por género, nacionalidad, plan, etc.
+
+COmparacion entre FileSystem y Base de datos
+
+FileSystem
+-Leer el archivo
+-Mapear los usuarios 1 a 1, actualizando la propiedad para aumentar en 1 año a los usuarios que cumplan con el género “femenino”.
+-Guardar el arreglo mapeado en un nuevo arreglo
+-Sobreescribir todo el archivo (incluyendo alos que no actualizamos)
+-Aplicar sobre este arreglo un algoritmo de ordenamiento
+-Devolver usuarios obtenidos
+-Mapear el arreglo de usuarios, pasando a todos los usuarios a un objeto nuevo que sólo cuente con las dos propiedades de interés.
+-Guardar el arreglo mapeado en un nuevo arreglo
+-Parsear el contenido del archivo en un arreglo.
+-Calcular el id que corresponde al último usuario del arreglo y asignarlo al usuario a agregar.
+-Agregar el usuario al arreglo.
+-Escribir Todo el arreglo (incluyendo a todos los usuarios que ya existen) para sobreescribir el archivo.
+
+Base de datos
+-Acceder a la base de datos
+-Solicitar que se actualicen a los usuarios femeninos en 1 año
+-Solicitar una proyección de los usuarios en nombre y apellido, solicitando en la misma instrucción por orden alfabético.
+-Devolver usuarios obtenidos.
+-Agregar el usuario al arreglo.
+-Escribir Todo el arreglo (incluyendo a todos los usuarios que ya existen) para sobreescribir el archivo.
+
+BDD Modelo Relacional
+Su escalabilidad es de forma vertical. Se puede tener un servidor,
+Hace HACE QUE PODAMOS HACER CONSULTAS COMPLEJAS
+La flexibilidad de los datos lo hace considerablemente mas rapidos en cuanto a su accesibilidad basandose en: clave valor, documentos, Graficos, memoria
+Son bases de datos muy útiles para organizar y gestionar información no estructurada, o cuando no se tiene una noción clara de los datos a almacenar.
+Alto grado de escalabilidad y de performance
+No utiliza SQL como lenguaje
+Algunos sistemas No SQL son
+MongoDB
+Redis
+DynamoDB
+
+BDD Modelo no Relaciona:
+Su escalabilidad es horizontal y debo tener mas de 1 servidor. por ejemplo mi web es mundial y debo tener servidores en todas partes del mundo.
+Hace que podamos acceder a consultas simples rapidamente.
+Refiere a modelos de datos donde se requieren estructuras más firmes y estrictas sobre los datos. Además, se utilizan en datos más controlados
+Se basan en tablas, columnas y filas para gestionar sus datos.
+Permiten conectar las tablas a partir de “relaciones” basadas en llaves primarias y foráneas.
+Sirve para datos de control como:
+Sistemas bancarios
+Sistemas de clima (no tiempo atmosférico).
+Sistemas de películas.
+Su lenguaje es SQL (Structured Query Language)
+Algunos sistemas SQL son:
+PostgreSQL
+Oracle
+MySQL
+MariaDB
+
+Cuando usar cada uno?
+Modelo relacional:
+Cuando el volumen de los datos no crece, o bien lo hace poco a poco
+Cuando las necesidades del proceso pueden atenderse en un solo servidor
+Cuando no existen picos de uso por parte de los usuarios que utilizan el sistema.
+
+Modelo no relacional
+Cuando el volumen de los datos crece rápidamente
+Cuando las necesidades del proceso son tan altas y tan constantes, que se requieren multi servidores
+Cuando los usuarios saturan el sistema y generan “picos de uso”.
+
+Servidor MongoDB
+La base de datos nos permite trabajar con una coleccion de datos que nos permite de una manera mas facil, detectar cuales de las colecciones esta rompiendose y esto nos permite encontrar de forma mas rapida cual es la que esta teniendo dificultades por medio de un ID o una identificaion.
+
+JSON(BSON)
+Se basa en un concepto de clave-valor. Mongo trabaja con una extension de archivos que se llama BSON que es lo que realmente pertence a la base de datos
+La coleccion se puese hacer de forma individual, por ejemplo: una coleccion de productos, una coleccion de ususarios, etc. nos facilita esto de dividir los datos segun la funcionalidad de nuestra app.
+Cada vez que pensemos en un grupo de datos, lo mencionaremos como una colección, en ésta almacenaremos cada documento individual (similar a una tabla con sus registros).
+Colección de usuarios
+Colección de productos
+Colección de mascotas
+Una tabla es mas estricta ya que no me deja cambiar datos de forma dinamica (MySQL). La coleccion de datos en mongoDB nos permite ese dinamismo, ejemplo en cada coleccion podemos hacer una coleccion de datos diferentes por jemplo para un usuario podemos traer solo nombre y apellido, para otro nombre, apellido y jobby.
