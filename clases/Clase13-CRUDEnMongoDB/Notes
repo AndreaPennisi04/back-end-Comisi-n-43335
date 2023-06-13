@@ -93,3 +93,10 @@ CRUD : D (Delete)
 Nuestra última operación es para eliminar datos, si bien hay muchas variantes de una eliminación, sólo veremos las dos principales.
 db.collection.deleteOne({key:val}) : Elimina sólo el primer elemento que cumpla con el criterio, se usa principalmente para encontrar identificadores específicos. Se recomienda no utilizar si somos conscientes de que el valor a buscar no es repetido.
 db.collection.deleteMany({key:val}) :  Elimina todos los documentos que cumplan con el criterio, se usa cuando sabemos que más de un valor va a contar con ese valor y necesitamos hacer una limpieza general.
+
+
+[{nombre: "Andrea"}, {last_name:"Pennisi"}, {curso:"BE"}, {edad:41}{email:"andrea@pennisi.com"}, {raza:"Humana"}, {nombre: "Romina"}, {last_name:"Pereyra"}, 
+{curso:"Javascript"}, 
+{edad:30}{email:"romina@pereyra.com"}, {raza:"Humana"}, {nombre: "Juanita"}, {last_name:"Juana"}, {curso:"SQL"}, {edad:25}{email:"juanita@juana.com"}, {raza:""},
+{nombre: "cosme"}, {last_name:"fulanito"}, {curso:"React"}, {edad:20}{email:"cosme@fulatnito.com"}, {raza:"Humana"},
+{nombre: "Homero"}, {last_name:"Simpson"}, {curso:"Ingenieria"}, {edad:52}{email:"homero@simpson.com"}, {raza:"Humana"}]
