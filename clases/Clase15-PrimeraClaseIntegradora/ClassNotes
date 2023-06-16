@@ -1,0 +1,21 @@
+Elementos: a incorporar 
+1. Clases: Se refiere a JS de clases
+2.Express y modelo:  request/ response 
+3. Router y Multer: multer que es una libreria para el manejo de archivos como para subir imagenes 
+4. Handlebars: para manejar todo el tema de los templeates del BE
+5. MongoDB y Mongoose: Mongoose es una base de datos no relacional. ODM (object data modeleling). Para las bases de datos relacionales se utiliza ORM(Object relational Mapper)
+
+Otras dependencias para instalar:
+1. npm install cross-env dotenv cors express-routemap: estas son dependencias utiles
+2. npm i -D nodemon: Esto es para que no rtengamos que subir y bajar la api por cada cambio que tengamos que hacer. nodemon es una dependencia de desarroll
+3. cross-env: Ayuda a manejar las variables de entorno. Es para que lea la api en multi-environmet o multi-stech. Esto es para los diferentes ambientes; prod, Demo, Qa, dev. Esto es pq tenemos distintas credenciales para distintos ambientes
+
+4. dotenv: recordemos que dtenv es para leer las variables de entorno 
+
+5.pwd: es un comando que se escribe en la terminal para ver lo que tiene el __dirname 
+
+6. "scripts": start:dev:cross-env NODE_ENV=development, //cross se usa para que si no sabemos q sistema operativo se va usar(winbdows, mac, linux) el script se pueda correr y funcione en caulquiera de ellos
+
+7. Para correr el script en la terminal: npm run start:dev
+
+8. Versionar una api:  API_VERSION=v1 (esto es para versionar una api) 
