@@ -50,7 +50,7 @@ class StudentsRoutes {
         // TODO: AGREGAR VALIDACION
 
         return res.json({
-          message: `get student info of ${studentId} succesfully`,
+          message: `get student info of ${studentId} succesfully`, // ${studentID} aca trae los ids q se crean a travez de mongo y que son unido ej:"_id": "648c319bef42988cb20d13ea",
           student: studentDetail,
         });
       } catch (error) {
@@ -66,6 +66,7 @@ class StudentsRoutes {
         // TODO REVISANDO SI EL ESTUDIANTE YA FUE CREADO ANTERIOMENTE
         const newStudent = await this.studentManager.createStudent(studentBody);
         if (!newStudent) {
+          // esto es para validar si el DNI ya existe
           return res.json({
             message: `the student with dni ${studentBody.dni} is already register`,
           });

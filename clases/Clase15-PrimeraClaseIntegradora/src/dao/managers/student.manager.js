@@ -24,7 +24,7 @@ class StudentManager {
     try {
       // TODO REVISANDO SI EL ESTUDIANTE YA FUE CREADO ANTERIOMENTE
       const studentDetail = await studentsModel.findOne({
-        dni: bodyStudent.dni,
+        dni: bodyStudent.dni, // es esta linea, me fijo si el estudiante con ese DNI ya existe y esto es pq en students model tiene un campo required true y unique
       });
       if (studentDetail && Object.keys(studentDetail).length !== 0) {
         return null;

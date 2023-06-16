@@ -25,7 +25,7 @@ class ViewsRoutes {
           dni: st.dni,
         };
       });
-      res.render("students", { students: mappedStudents });
+      res.render("students", { students: mappedStudents }); // aca lo que hace es un mapeado para mostrar todos los estudiantes de la lista.
     });
 
     this.router.get(`${this.path}/courses`, async (req, res) => {
