@@ -1,0 +1,20 @@
+
+
+{
+    "dealer": {
+      "name": "Honda Pilar",
+      "address": "av panamericana km 183",
+      "vehicles": [
+        {
+          "_id": "adnasdjkansdkjasn",
+          "vehicle_id": "thisisavechiceid",
+          "ref": "vehicle"
+        },
+        {
+          "_id": "adnasdjkansdkjasn",
+          "vehicle_id": "thisisavechiceid",
+          "ref": "vehicle"
+        }
+      ]
+    }
+  }
