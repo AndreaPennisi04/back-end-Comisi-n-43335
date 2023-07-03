@@ -10,7 +10,7 @@ const app = express();
 
 const PORT = 5000;
 const DB_HOST = "localhost";
-const DB_PORT = 27017; // esto es lo que hace que se conecte con Mongo compass. es el numeron de ppuerto de conexion.
+const DB_PORT = 27017; // esto es lo que hace que se conecte con Mongo compass. es el numeron de puerto de conexion.
 const DB_NAME = "mongoAvanzadoP1";
 
 const MONGO_URL = `mongodb://${DB_HOST}:${DB_PORT}/${DB_NAME}`; //esto es el string de conexion q en local tiene esta forma
@@ -39,4 +39,9 @@ app.listen(PORT, () => {
 });
 
 /*NOTAS:
-En el ejemplo de la linea 24 (nongo_url) tambien se puede declarar un options con un parse y unified seteandolo de esta manera: .connect(MONGO_URL, { useNewUrlParser: true, useUnifiedTopology: true }) Estas son opciones para hacer le parse automatico de la URL(useNewUrlParser) y (useUnifiedTopology) en la forma que funcionan los nodos de mongo */
+En el ejemplo de la linea 24 (nongo_url) tambien se puede declarar un options con un parse y unified seteandolo de esta manera: 
+.connect(MONGO_URL, { useNewUrlParser: true, useUnifiedTopology: true }) Estas son opciones para hacer le parse 
+automatico de la URL(useNewUrlParser) y (useUnifiedTopology) en la forma que funcionan los nodos de mongo 
+
+Explain/executionStats: Esto ayuda a mostrarnos en cuantos milisegundos tardo el sistema en ejecutarlo. Entonces se veria: const res = await useModel.find().explain("executionStats");
+console.log(res)*/

@@ -23,15 +23,24 @@ const schema = new mongoose.Schema({
     type: [
       {
         note: {
-          type: mongoose.Schema.Types.ObjectId,
+          type: mongoose.Schema.Types.ObjectId, //mongooseSchemaTyoeObjectId es como una validacion lo que hacemos donde me trae el id de la nota
           ref: "notas",
         },
       },
     ],
+    default: [],
   },
 });
 
-// este schema es un middleware donde definimos un funcion para tener acceso al this que este caso es notes.note. El this hace referencia al schema
+/*PRE: Este schema es un middleware donde definimos un funcion para tener acceso al this que este caso es notes.note. El this hace referencia al schema. 
+Hay que dejar en claro que schema es el nombre que le doy a la constante en la linea 6 abajo de la constante de collection.
+Otra forma de declarar este middleware podria se: schema.pre ("findOne", function (){
+  this.populate("notes.type")
+})
+Pre con limit: schema.pre ("findOne", function (){
+  this.limit(10) y me lo limita a 10
+})*/
+
 schema.pre("find", function () {
   this.populate("notes.note");
 });
