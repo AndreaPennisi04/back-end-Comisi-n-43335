@@ -31,7 +31,6 @@ router.post("/lognin", async (req, res) => {
   const user = await userModel.findOne({ email, password }); // aca el pasword se pasa asi pq todavia no esta encriptado pero mas adelante se le dara otro formato que seria un hash. Por ahora lo dejamos asi
 
   if (!user) return res.status(401).send({ status: "error", error: "Incorrect credencials" });
-
   // Aca se crea la session
   req.session.user = {
     name: `${user.first_name} ${user.last_name}`,
@@ -40,4 +39,4 @@ router.post("/lognin", async (req, res) => {
   res.send({ status: "success", payload: req.session.user, message: "First login! 👏👏" });
 });
 
-export default router;
+module.exports = router;

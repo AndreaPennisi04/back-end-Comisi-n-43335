@@ -1,8 +1,9 @@
 const { Router } = require("express");
+const mongoose = "mongoose";
 const router = Router();
 
 const collection = "users";
-const schema = mongoose.schema({
+const schema = mongoose.Schema({
   first_name: String,
   last_name: String,
   email: {
@@ -15,4 +16,4 @@ const schema = mongoose.schema({
 
 const userModel = mongoose.model(collection, schema);
 
-export default userModel;
+module.export = userModel;

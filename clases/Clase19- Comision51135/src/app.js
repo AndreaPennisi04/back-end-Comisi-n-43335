@@ -1,17 +1,21 @@
-import express from "express";
-import cookieParser from "cookie-parser";
-import session from "express-session";
-import FileStore from "session-file-store";
+const express = require("express");
+const cookieParser = require("cookie-parser");
+const session = require("express-session");
+//const FileStore = require("session-file-store");
 const MongoStore = require("connect-mongo"); // Esto es la libreria que nos va ayudar a persistir la data en la base de datos de mongo
 const mongoose = require("mongoose"); // esto es la conexion a mongo
 //const FileStore = FileStore(session);
-const usersViewRouter = require("./src/routes/users.views.router");
-const sessionRouter = require("./src/routes/sessions.router.js");
+const usersViewRouter = require("./routes/users.views.router");
+const sessionRouter = require("./routes/sessions.router.js");
 
 const app = express();
 
+app.use(express.json());
+app.use(express.urlencoded({ extended: ture }));
+
 app.engine("handlebars", handlebars.engine());
 app.set("views", __dirname + "/views");
+app.set("views", __dirname + "/public");
 app.set("views engine", "handlebars");
 app.use(cookieParser());
 
