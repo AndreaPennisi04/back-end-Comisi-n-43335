@@ -7,6 +7,10 @@ const viewsRoutes = require("./routes/views.routes");
 const cookiesRoutes = require("./routes/cookies.routes");
 const sessionRoutes = require("./routes/session.routes");
 const authMdw = require("./middleware/auth.middleware");
+const fileStore = require("session-file-store");
+//const fileStore = fileStore(session);
+const MongoStore = require("connect-mongo");
+const mongoose = require("mongoose");
 
 const app = express();
 
