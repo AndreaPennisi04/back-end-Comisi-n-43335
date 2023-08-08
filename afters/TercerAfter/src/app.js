@@ -3,7 +3,7 @@ import cookieParser from "cookie-parser";
 import displayRoutes from "express-routemap";
 import cors from "cors";
 import { connect } from "mongoose";
-//import { PORT } from "./config/config.js";
+import { PORT } from "./config/config.js";
 
 import userRoutes from "./routes/users.routes.js";
 import bussinesRoutes from "./routes/bussiness.routes.js";
@@ -11,10 +11,10 @@ import ordersRoutes from "./routes/orders.routes.js";
 
 const app = express();
 
-const PORT_APP = process.env.PORT || 5005;
+const PORT_APP = PORT || 5005;
 const DB_HOST = "localhost";
 const DB_PORT = 27017;
-const DB_NAME = "layerArchitectureDBHandsLab";
+const DB_NAME = "layerArchitectureAfter3";
 
 const MONGO_URL = `mongodb://${DB_HOST}:${DB_PORT}/${DB_NAME}`;
 
@@ -30,15 +30,15 @@ app.use(
 
 connect(MONGO_URL)
   .then((conn) => {
-    console.log("🚀 ~ file: app.js:33 ~ .then ~ conn:", conn);
+    console.log("🚀 ~ file: app.js:26 ~ CONECTADO!:");
   })
   .catch((err) => {
-    console.log("🚀 ~ file: app.js:36 ~ err:", err);
+    console.log("🚀 ~ file: app.js:29 ~ err:", err);
   });
 
-//Creacion de Rutas
-app.use("/appi/users", userRoutes);
-app.use("/appi/bussiness", bussinesRoutes);
+// CREACION DE LAS RUTAS
+app.use("/api/users", userRoutes);
+app.use("/api/bussiness", bussinesRoutes);
 app.use("/api/orders", ordersRoutes);
 
 app.listen(PORT_APP, () => {

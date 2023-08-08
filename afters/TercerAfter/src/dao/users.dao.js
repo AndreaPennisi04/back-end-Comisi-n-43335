@@ -33,7 +33,7 @@ export default class UserDao {
 
   updateUserById = async (uid, user) => {
     try {
-      const data = await userModel.updateOne({ _id: uid }, { $set: user }); // aca el set me trae el ultimo ususario, lo actualiza
+      const data = await userModel.updateOne({ _id: uid }, { $set: user });
       return data;
     } catch (error) {
       console.log("🚀 ~ file: users.dao.js:48 ~ UserDao ~ updateUserById= ~ error:", error);

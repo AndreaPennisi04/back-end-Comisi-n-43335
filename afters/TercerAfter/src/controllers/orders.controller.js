@@ -43,9 +43,9 @@ export const createOrder = async (req, res) => {
   });
 
   const sumOrders = actualOrders.reduce((acc, prev) => {
-    acc += prev.price; // esto es para el acumulador de precios
+    acc += prev.price;
     return acc;
-  }, 0); // le tengo que pasar el valor 0 para que inicie desde 0 y los precios q se van acumulando
+  }, 0);
 
   const orderNumber = Date.now() + Math.floor(Math.random() * 10000 + 1);
 
@@ -58,9 +58,9 @@ export const createOrder = async (req, res) => {
     totalPrice: sumOrders,
   };
 
-  const newOrder = await orderService.createOrder(order); // controlado separando capas
+  const newOrder = await orderService.createOrder(order);
 
-  userData.orders.push(newOrder._id); // empujamos la nueva order
+  userData.orders.push(newOrder._id);
   await userService.updateUserById(user, userData);
 
   return res.json({
@@ -71,8 +71,7 @@ export const createOrder = async (req, res) => {
 
 export const updateOrderById = async (req, res) => {
   const { oid } = req.params;
-  const { resolve } = req.query; // resolve: es la info de la orden, si esta resuelto, si esta vendido, es para saber el estado de la orden.
-  // podemos crear en el estatus que diga, vendido, pendding como dice la linea 56 status: pendding
+  const { resolve } = req.query;
 
   const data = await orderService.getOrderById(oid);
   data.status = resolve;

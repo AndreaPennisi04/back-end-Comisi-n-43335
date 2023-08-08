@@ -30,8 +30,7 @@ export default class OrdersDao {
 
   updateOrderById = async (oid, order) => {
     try {
-      const data = await orderModel.updateOne({ _id: oid }, { $set: order }); // Pq usamos el SET, pq el set es para escribir el order, retorna el objeto actualizado. $set, se le manda el nombre del modelo que en este caso es order
-      console.log("🚀 ~ file: orders.dao.js:34 ~ OrdersDao ~ updateOrderById= ~ usamos:", usamos);
+      const data = await orderModel.updateOne({ _id: oid }, { $set: order });
       return data;
     } catch (error) {
       return null;
