@@ -1,6 +1,15 @@
-import { faker } from "@faker-js/faker";
+import { fakerDE_CH as faker } from "@faker-js/faker";
 
-faker.locale = "es";
+//faker.setLocale("en_GH");
+// or
+faker.locale = "en_GH";
+//faker.localeFallback = "es";//esto es lo que tiene solo el profesor, el resto lo agregue de la documentacion
+
+// same as fakerDE_CH
+//export const customFaker = new Faker({
+// Now multiple fallbacks are supported
+//locale: [en_GH,  en, base],
+//});
 
 export const generateProduct = () => {
   return {
