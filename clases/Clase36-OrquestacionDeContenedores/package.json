@@ -1,0 +1,43 @@
+{
+  "name": "clase36-orquestaciondecontenedores",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start:dev": "cross-env NODE_ENV=development nodemon ./src/app",
+    "start:prod": "cross-env NODE_ENV=production nodemon ./src/app",
+    "test:performance": "artillery quick --count 20 --num 20 http://localhost:5000/endpoint -o easy-endpoint.json",
+    "test:performance:heavy": "artillery quick --count 10 --num 10 http://localhost:5000/complejo -o complex-endpoint.json",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "type": "module",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "cluster": "^0.7.7",
+    "colors": "^1.4.0",
+    "connect-mongo": "^5.0.0",
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
+    "cross-env": "^7.0.3",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "express-compression": "^1.0.2",
+    "express-routemap": "^1.6.0",
+    "mongoose": "^7.5.0",
+    "mongoose-paginate-v2": "^1.7.31",
+    "os": "^0.1.2",
+    "passport": "^0.6.0",
+    "passport-jwt": "^4.0.1",
+    "winston": "^3.10.0",
+    "zlib": "^1.0.5"
+  },
+  "devDependencies": {
+    "@faker-js/faker": "^8.0.2",
+    "faker": "^6.6.6",
+    "artillery": "^2.0.0-36",
+    "nodemon": "^3.0.1"
+  }
+}
