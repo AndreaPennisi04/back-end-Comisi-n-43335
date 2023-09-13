@@ -1,0 +1,27 @@
+Ejercicio 1
+Usar variables de entorno (app)
+Devolves information sensible session router 
+No hay desestructuracion  session router no nstamos validando dates estamos tomando el req.body, no hay validations
+Views controller es como que esta de mas, no nstamos exportando ni nada esta como suelta 
+En register handlebars se ve todo, no tape la contrasena no esta enocriptada o hashed  en session router password no tiene type password
+No cheque que el usuario este creado en session router 
+—
+El Puerto esta harcodeado 
+No hay validation , el usuario se suede guarder vacation
+
+
+Seguedo parte 
+No hay variable de entorno  en app connection mongoose 
+En session controller lines 21 hay console log, el error no tiene que ser tan explicit. Solo me dice q hay un error pero nada mas es poco explicative
+User controller suede ser no filterer la information sensible  en getUsers
+No hay un try catch en user controllers no esta manejando errors, el programs se puede romper 
+Losing.js tiene un catch poco explicit 
+File system si mandas un campo vacio  el alert devolve un success auntque  haya un error 
+
+Tercer ejercicio
+El error segue iguana en lines 23 sessions controllers 
+La contrasena no debería estar en la cookie en session controller 
+No valid la query en users controller 
+View router flat el try catch 
+El ado esta validando parameters y debería hacerlo los controllers 
+Handlebars segue sin power el type y muestra la contrasena 
